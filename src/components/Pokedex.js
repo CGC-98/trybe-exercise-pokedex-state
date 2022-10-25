@@ -3,6 +3,7 @@ import { arrayOf } from 'prop-types';
 
 import Pokemon from './Pokemon';
 import { pokemonType } from '../types';
+import Poketype from './Poketype';
 
 class Pokedex extends React.Component {
   state = { pokeDisplay: 0 };
@@ -19,7 +20,6 @@ class Pokedex extends React.Component {
   render() {
     const { pokemonList } = this.props;
     const { pokeDisplay } = this.state;
-    console.log(pokeDisplay);
     return (
       <>
         <h1> Pokédex </h1>
@@ -32,6 +32,7 @@ class Pokedex extends React.Component {
               />))[pokeDisplay]}
         </div>
         <button type="button" onClick={ this.handleNextBtn }>Próximo pokémon</button>
+        <Poketype pokemonList={ pokemonList } />
       </>
     );
   }
