@@ -1,29 +1,21 @@
 import React from 'react';
-// import propTypes from 'prop-types';
-// import { pokemonType } from '../types';
+import propTypes from 'prop-types';
 
 class Poketype extends React.Component {
-  handleFireBtn = () => {};
-
-  handlePsycBtn = () => {};
-
   render() {
-    // const { pokemonList } = this.props;
+    const { handleFireBtn, handlePsycBtn } = this.props;
     return (
       <>
-        <button type="button" onClick={ this.handleFireBtn }>Fire</button>
-        <button type="button" onClick={ this.handlePsycBtn }>Psychic</button>
+        <button type="button" onClick={ handleFireBtn }>Fire</button>
+        <button type="button" onClick={ handlePsycBtn }>Psychic</button>
       </>
     );
   }
 }
 
-Poketype.defaultProps = {
-  pokemonList: [],
+Poketype.propTypes = {
+  handleFireBtn: propTypes.instanceOf(Function).isRequired,
+  handlePsycBtn: propTypes.instanceOf(Function).isRequired,
 };
-
-// Poketype.propTypes = {
-//   pokemonList: propTypes.arrayOf(pokemonType),
-// };
 
 export default Poketype;
